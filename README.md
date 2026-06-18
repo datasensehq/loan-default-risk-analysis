@@ -10,6 +10,43 @@
 
 ---
 
+## 📊 Key Visualizations
+
+### Default Rate by Loan Grade
+![Default Rate by Grade](reports/figures/chart_default_by_grade.svg)
+
+> Grade F/G loans default at **33–36%** — nearly **4× the bank average of 8.3%**. Grade A borrowers remain well-controlled at 5.5%.
+
+---
+
+### Quarterly Default Rate Trend (2013–2018)
+![Quarterly Trend](reports/figures/chart_quarterly_trend.svg)
+
+> A clear inflection point emerges in **Q3 2015** — the default rate has risen from 6.2% to 15.6% and shows no sign of plateauing. This trend drove the analytical mandate for this project.
+
+---
+
+### Default Rate by Loan Purpose
+![Default by Purpose](reports/figures/chart_default_by_purpose.svg)
+
+> **Small business** and **renewable energy** loans carry the highest default risk (31%+). Debt consolidation — the most common purpose — sits at 20.8%, well above the bank average.
+
+---
+
+### Portfolio Risk Tier Distribution
+![Risk Tier Donut](reports/figures/chart_risk_tier_donut.svg)
+
+> Of ~890,000 scored loans, **18% fall into the High-Risk tier** (score 0.6–1.0), representing significant capital exposure. These are flagged for manual review.
+
+---
+
+### Risk Model — ROC Curve & Feature Importance
+![ROC Curve and Feature Importance](reports/figures/chart_roc_features.svg)
+
+> The logistic regression model achieves **ROC-AUC ≈ 0.70** on held-out test data. `int_rate`, `loan_to_income`, and `grade_num` are the strongest predictors of default.
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -31,7 +68,7 @@ loan-default-risk-analysis/
 │   └── 04_high_risk_segment.sql
 │
 ├── reports/
-│   ├── figures/                # EDA charts
+│   ├── figures/                # EDA charts (SVG)
 │   └── summary_findings.md     # Key insights
 │
 ├── dashboard/
@@ -67,26 +104,25 @@ loan-default-risk-analysis/
 
 ---
 
-## 📊 Key Findings
+## 📈 Key Findings
 
 - **Grade F/G loans** have default rates exceeding **33%** — nearly 4× the bank average
-- **Small business** and **debt consolidation** loans dominate the high-risk purpose segment
-- Loan-to-income ratio and interest rate are the **strongest predictors** of default
+- **Small business** and **renewable energy** loans dominate the high-risk purpose segment
+- A rising default trend started in **Q3 2015** and has not plateaued through 2018
+- `int_rate` and `loan_to_income` are the **strongest predictors** of default
 - The logistic regression model achieves **ROC-AUC ≈ 0.70** on held-out test data
-- ~18% of the loan portfolio falls into the **High-Risk tier** — representing significant exposure
+- ~**18%** of the loan portfolio falls into the **High-Risk tier** — representing significant capital exposure
 
 ---
 
 ## 🤖 Risk Model Summary
 
 ```
-Features used:
-  loan_amnt, int_rate, annual_inc, dti, loan_to_income, grade_num
-
-Algorithm:     Logistic Regression (class_weight='balanced')
-Train/Test:    80/20 stratified split
-ROC-AUC:       ~0.70
-Risk Tiers:    Low (0–0.3) | Medium (0.3–0.6) | High (0.6–1.0)
+Features used:   loan_amnt, int_rate, annual_inc, dti, loan_to_income, grade_num
+Algorithm:       Logistic Regression (class_weight='balanced')
+Train/Test:      80/20 stratified split
+ROC-AUC:         ~0.70
+Risk Tiers:      Low (0.0–0.3) | Medium (0.3–0.6) | High (0.6–1.0)
 ```
 
 ---
@@ -105,7 +141,9 @@ pip install -r requirements.txt
 # Download from Kaggle and save to: data/raw/loan.csv
 
 # 4. Run notebooks in order
-# 01_data_cleaning.ipynb → 02_eda.ipynb → 03_risk_model.ipynb
+jupyter notebook notebooks/01_data_cleaning.ipynb
+jupyter notebook notebooks/02_eda.ipynb
+jupyter notebook notebooks/03_risk_model.ipynb
 ```
 
 ---
@@ -115,7 +153,7 @@ pip install -r requirements.txt
 1. **Tighten underwriting** for Grade E–G borrowers — apply stricter DTI and income thresholds
 2. **Reprice small business loans** — current rates do not reflect actual default risk
 3. **Flag high loan-to-income** applications (>0.35) for manual review
-4. **Monitor cohort trends** monthly — the rising default curve started Q3 2015 and hasn't plateaued
+4. **Monitor cohort trends monthly** — the rising default curve started Q3 2015 and hasn't plateaued
 
 ---
 
