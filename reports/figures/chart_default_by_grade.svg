@@ -1,0 +1,82 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <!-- Background -->
+  <rect width="760" height="380" fill="#0f1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="40" y="38" font-size="15" font-weight="700" fill="#f0f4ff" letter-spacing="0.3">Default Rate by Loan Grade</text>
+  <text x="40" y="57" font-size="11" fill="#6b7694">NovaCred Bank · Lending Club Dataset 2007–2018</text>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="80" x2="720" y2="80" stroke="#1e2235" stroke-width="1"/>
+  <line x1="80" y1="120" x2="720" y2="120" stroke="#1e2235" stroke-width="1"/>
+  <line x1="80" y1="160" x2="720" y2="160" stroke="#1e2235" stroke-width="1"/>
+  <line x1="80" y1="200" x2="720" y2="200" stroke="#1e2235" stroke-width="1"/>
+  <line x1="80" y1="240" x2="720" y2="240" stroke="#1e2235" stroke-width="1"/>
+  <line x1="80" y1="280" x2="720" y2="280" stroke="#1e2235" stroke-width="1"/>
+  <line x1="80" y1="310" x2="720" y2="310" stroke="#374060" stroke-width="1"/>
+
+  <!-- Y-axis labels -->
+  <text x="70" y="84" font-size="10" fill="#6b7694" text-anchor="end">40%</text>
+  <text x="70" y="124" font-size="10" fill="#6b7694" text-anchor="end">30%</text>
+  <text x="70" y="164" font-size="10" fill="#6b7694" text-anchor="end">20%</text>
+  <text x="70" y="204" font-size="10" fill="#6b7694" text-anchor="end">10%</text>
+  <text x="70" y="244" font-size="10" fill="#6b7694" text-anchor="end">5%</text>
+  <text x="70" y="284" font-size="10" fill="#6b7694" text-anchor="end">2%</text>
+
+  <!-- Bank avg line -->
+  <line x1="80" y1="193" x2="720" y2="193" stroke="#f39c12" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <text x="724" y="197" font-size="9.5" fill="#f39c12">8.3% avg</text>
+
+  <!-- Grade A — 5.5% → height ~16.5, top = 310-16.5 = 293.5 -->
+  <defs>
+    <linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2ecc71"/><stop offset="100%" stop-color="#1a8a4a"/></linearGradient>
+    <linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3498db"/><stop offset="100%" stop-color="#1a5f9e"/></linearGradient>
+    <linearGradient id="gC" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9b59b6"/><stop offset="100%" stop-color="#6a2d8f"/></linearGradient>
+    <linearGradient id="gD" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f39c12"/><stop offset="100%" stop-color="#b67108"/></linearGradient>
+    <linearGradient id="gE" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e74c3c"/><stop offset="100%" stop-color="#a52e22"/></linearGradient>
+    <linearGradient id="gF" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e74c3c"/><stop offset="100%" stop-color="#7a1a10"/></linearGradient>
+    <linearGradient id="gG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e74c3c"/><stop offset="100%" stop-color="#5c0f09"/></linearGradient>
+  </defs>
+
+  <!-- Grade A: 5.5% -->
+  <rect x="100" y="294" width="64" height="16" rx="3" fill="url(#gA)"/>
+  <text x="132" y="289" font-size="10.5" fill="#2ecc71" text-anchor="middle" font-weight="600">5.5%</text>
+  <text x="132" y="327" font-size="11.5" fill="#c9d0e8" text-anchor="middle" font-weight="600">A</text>
+
+  <!-- Grade B: 10.2% -->
+  <rect x="190" y="279" width="64" height="31" rx="3" fill="url(#gB)"/>
+  <text x="222" y="274" font-size="10.5" fill="#3498db" text-anchor="middle" font-weight="600">10.2%</text>
+  <text x="222" y="327" font-size="11.5" fill="#c9d0e8" text-anchor="middle" font-weight="600">B</text>
+
+  <!-- Grade C: 14.8% -->
+  <rect x="280" y="265" width="64" height="45" rx="3" fill="url(#gC)"/>
+  <text x="312" y="260" font-size="10.5" fill="#b07cc6" text-anchor="middle" font-weight="600">14.8%</text>
+  <text x="312" y="327" font-size="11.5" fill="#c9d0e8" text-anchor="middle" font-weight="600">C</text>
+
+  <!-- Grade D: 21.3% -->
+  <rect x="370" y="246" width="64" height="64" rx="3" fill="url(#gD)"/>
+  <text x="402" y="241" font-size="10.5" fill="#f39c12" text-anchor="middle" font-weight="600">21.3%</text>
+  <text x="402" y="327" font-size="11.5" fill="#c9d0e8" text-anchor="middle" font-weight="600">D</text>
+
+  <!-- Grade E: 27.6% -->
+  <rect x="460" y="227" width="64" height="83" rx="3" fill="url(#gE)"/>
+  <text x="492" y="222" font-size="10.5" fill="#e87c73" text-anchor="middle" font-weight="600">27.6%</text>
+  <text x="492" y="327" font-size="11.5" fill="#c9d0e8" text-anchor="middle" font-weight="600">E</text>
+
+  <!-- Grade F: 33.4% -->
+  <rect x="550" y="210" width="64" height="100" rx="3" fill="url(#gF)"/>
+  <text x="582" y="205" font-size="10.5" fill="#e87c73" text-anchor="middle" font-weight="600">33.4%</text>
+  <text x="582" y="327" font-size="11.5" fill="#c9d0e8" text-anchor="middle" font-weight="600">F</text>
+
+  <!-- Grade G: 35.9% -->
+  <rect x="640" y="202" width="64" height="108" rx="3" fill="url(#gG)"/>
+  <text x="672" y="197" font-size="10.5" fill="#e87c73" text-anchor="middle" font-weight="600">35.9%</text>
+  <text x="672" y="327" font-size="11.5" fill="#c9d0e8" text-anchor="middle" font-weight="600">G</text>
+
+  <!-- X-axis label -->
+  <text x="400" y="360" font-size="11" fill="#6b7694" text-anchor="middle">Loan Grade (A = Best, G = Highest Risk)</text>
+
+  <!-- 4x badge for F/G -->
+  <rect x="544" y="140" width="135" height="22" rx="4" fill="#3d1515"/>
+  <text x="612" y="155" font-size="10" fill="#e74c3c" text-anchor="middle" font-weight="600">⚠ F/G = 4× bank average</text>
+</svg>
