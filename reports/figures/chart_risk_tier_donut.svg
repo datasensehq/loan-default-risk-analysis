@@ -1,0 +1,64 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="760" height="380" fill="#0f1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="40" y="38" font-size="15" font-weight="700" fill="#f0f4ff" letter-spacing="0.3">Portfolio Risk Tier Distribution</text>
+  <text x="40" y="57" font-size="11" fill="#6b7694">~890,000 loans scored by logistic regression model</text>
+
+  <!-- Donut chart centered at 270,200 r=130 inner=72 -->
+  <!-- Low Risk: 58% → 208.8° from 270° to 118.8° (clockwise) -->
+  <!-- Medium: 24% → 86.4° -->
+  <!-- High: 18% → 64.8° -->
+
+  <!-- Low Risk segment: 58% — #2ecc71, 270° to ~129° (going clockwise = 208.8°) 
+       Start angle: -90° (top), sweep 208.8° 
+       Using path arc commands. Center: 270,200, R=130, r=72 -->
+
+  <!-- We'll draw three arcs. Angles in degrees, converted:
+       Low:    start= -90,  sweep= 208.8  → end= 118.8
+       Medium: start= 118.8, sweep= 86.4  → end= 205.2
+       High:   start= 205.2, sweep= 64.8  → end= 270 (=−90)
+  -->
+
+  <!-- LOW RISK 58% — outer arc from -90° to 118.8° -->
+  <!-- -90° = (0,-130) relative → abs (270, 70)  -->
+  <!-- 118.8° → cos(118.8°)=−0.4818, sin=0.8763 → (270-62.6, 200+113.9) = (207.4, 313.9) -->
+  <path d="M270,70 A130,130 0 1,1 207.4,313.9 L239.5,271.5 A72,72 0 1,0 270,128 Z"
+        fill="#2ecc71" opacity="0.92"/>
+
+  <!-- MEDIUM RISK 24% — 118.8° to 205.2° -->
+  <!-- 118.8°: cos=−0.4818, sin=0.8763 → outer:(207.4,313.9), inner:(165.3,263.1) approx -->
+  <!-- 205.2°: cos=−0.9048, sin=−0.4258 → outer:(152.4,144.6), inner:(134.8,169.3) -->
+  <path d="M207.4,313.9 A130,130 0 0,1 152.4,144.6 L179.7,169.3 A72,72 0 0,0 239.5,271.5 Z"
+        fill="#f39c12" opacity="0.92"/>
+
+  <!-- HIGH RISK 18% — 205.2° to 270° -->
+  <!-- 205.2°: outer (152.4,144.6) -->
+  <!-- 270° = (0,-130) → (270,70) outer; inner (270,128) -->
+  <path d="M152.4,144.6 A130,130 0 0,1 270,70 L270,128 A72,72 0 0,0 179.7,169.3 Z"
+        fill="#e74c3c" opacity="0.92"/>
+
+  <!-- Center hole label -->
+  <circle cx="270" cy="200" r="68" fill="#0f1117"/>
+  <text x="270" y="193" font-size="22" font-weight="800" fill="#f0f4ff" text-anchor="middle">~890K</text>
+  <text x="270" y="212" font-size="10.5" fill="#6b7694" text-anchor="middle">loans scored</text>
+
+  <!-- Legend -->
+  <rect x="440" y="110" width="14" height="14" rx="3" fill="#2ecc71"/>
+  <text x="462" y="122" font-size="13" fill="#f0f4ff" font-weight="600">Low Risk</text>
+  <text x="462" y="140" font-size="11" fill="#6b7694">58% of portfolio · Score 0.0–0.3</text>
+
+  <rect x="440" y="165" width="14" height="14" rx="3" fill="#f39c12"/>
+  <text x="462" y="177" font-size="13" fill="#f0f4ff" font-weight="600">Medium Risk</text>
+  <text x="462" y="195" font-size="11" fill="#6b7694">24% of portfolio · Score 0.3–0.6</text>
+
+  <rect x="440" y="220" width="14" height="14" rx="3" fill="#e74c3c"/>
+  <text x="462" y="232" font-size="13" fill="#f0f4ff" font-weight="600">High Risk</text>
+  <text x="462" y="250" font-size="11" fill="#6b7694">18% of portfolio · Score 0.6–1.0</text>
+
+  <!-- Callout box -->
+  <rect x="440" y="278" width="270" height="62" rx="6" fill="#1a0d0d" stroke="#e74c3c" stroke-width="1"/>
+  <text x="455" y="297" font-size="10.5" fill="#e74c3c" font-weight="700">⚠ High-Risk Exposure</text>
+  <text x="455" y="315" font-size="10.5" fill="#c9d0e8">18% of loans → significant capital at</text>
+  <text x="455" y="331" font-size="10.5" fill="#c9d0e8">risk; flagged for manual review</text>
+</svg>
