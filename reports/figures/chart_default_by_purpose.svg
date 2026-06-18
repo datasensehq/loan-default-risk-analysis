@@ -1,0 +1,85 @@
+<svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="760" height="400" fill="#0f1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="40" y="38" font-size="15" font-weight="700" fill="#f0f4ff" letter-spacing="0.3">Default Rate by Loan Purpose</text>
+  <text x="40" y="57" font-size="11" fill="#6b7694">Top 8 purposes ranked by default rate · SQL aggregation on loans table</text>
+
+  <!-- Axis line -->
+  <line x1="230" y1="75" x2="230" y2="348" stroke="#374060" stroke-width="1"/>
+  <line x1="230" y1="348" x2="710" y2="348" stroke="#374060" stroke-width="1"/>
+
+  <!-- Grid verticals -->
+  <line x1="350" y1="75" x2="350" y2="348" stroke="#1e2235" stroke-width="1"/>
+  <line x1="470" y1="75" x2="470" y2="348" stroke="#1e2235" stroke-width="1"/>
+  <line x1="590" y1="75" x2="590" y2="348" stroke="#1e2235" stroke-width="1"/>
+  <line x1="710" y1="75" x2="710" y2="348" stroke="#1e2235" stroke-width="1"/>
+  <text x="350" y="362" font-size="9.5" fill="#6b7694" text-anchor="middle">10%</text>
+  <text x="470" y="362" font-size="9.5" fill="#6b7694" text-anchor="middle">20%</text>
+  <text x="590" y="362" font-size="9.5" fill="#6b7694" text-anchor="middle">30%</text>
+  <text x="710" y="362" font-size="9.5" fill="#6b7694" text-anchor="middle">40%</text>
+
+  <!-- Bars: x_start=230, per 1% = (710-230)/40 = 12px
+    1. Small Business: 31.2% → 374px
+    2. Renewable Energy: 28.4% → 340.8
+    3. Moving: 25.1% → 301.2
+    4. Debt Consolidation: 20.8% → 249.6
+    5. Credit Card: 16.4% → 196.8
+    6. Medical: 15.7% → 188.4
+    7. Home Improvement: 12.3% → 147.6
+    8. Car: 8.9% → 106.8
+  -->
+
+  <defs>
+    <linearGradient id="bHigh" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#e74c3c"/><stop offset="100%" stop-color="#c0392b" stop-opacity="0.8"/></linearGradient>
+    <linearGradient id="bMed" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f39c12"/><stop offset="100%" stop-color="#d68910" stop-opacity="0.8"/></linearGradient>
+    <linearGradient id="bLow" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3498db"/><stop offset="100%" stop-color="#2471a3" stop-opacity="0.8"/></linearGradient>
+    <linearGradient id="bGreen" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2ecc71"/><stop offset="100%" stop-color="#1a8a4a" stop-opacity="0.8"/></linearGradient>
+  </defs>
+
+  <!-- 1. Small Business 31.2% -->
+  <rect x="230" y="88"  width="374" height="24" rx="3" fill="url(#bHigh)"/>
+  <text x="220" y="105" font-size="10.5" fill="#c9d0e8" text-anchor="end">Small Business</text>
+  <text x="612" y="105" font-size="10.5" fill="#e87c73" font-weight="700">31.2%</text>
+
+  <!-- 2. Renewable Energy 28.4% -->
+  <rect x="230" y="122" width="340.8" height="24" rx="3" fill="url(#bHigh)"/>
+  <text x="220" y="139" font-size="10.5" fill="#c9d0e8" text-anchor="end">Renewable Energy</text>
+  <text x="578" y="139" font-size="10.5" fill="#e87c73" font-weight="700">28.4%</text>
+
+  <!-- 3. Moving 25.1% -->
+  <rect x="230" y="156" width="301.2" height="24" rx="3" fill="url(#bHigh)"/>
+  <text x="220" y="173" font-size="10.5" fill="#c9d0e8" text-anchor="end">Moving</text>
+  <text x="539" y="173" font-size="10.5" fill="#e87c73" font-weight="700">25.1%</text>
+
+  <!-- 4. Debt Consolidation 20.8% -->
+  <rect x="230" y="190" width="249.6" height="24" rx="3" fill="url(#bMed)"/>
+  <text x="220" y="207" font-size="10.5" fill="#c9d0e8" text-anchor="end">Debt Consolidation</text>
+  <text x="487" y="207" font-size="10.5" fill="#f5b942" font-weight="700">20.8%</text>
+
+  <!-- 5. Credit Card 16.4% -->
+  <rect x="230" y="224" width="196.8" height="24" rx="3" fill="url(#bMed)"/>
+  <text x="220" y="241" font-size="10.5" fill="#c9d0e8" text-anchor="end">Credit Card</text>
+  <text x="434" y="241" font-size="10.5" fill="#f5b942" font-weight="700">16.4%</text>
+
+  <!-- 6. Medical 15.7% -->
+  <rect x="230" y="258" width="188.4" height="24" rx="3" fill="url(#bMed)"/>
+  <text x="220" y="275" font-size="10.5" fill="#c9d0e8" text-anchor="end">Medical</text>
+  <text x="426" y="275" font-size="10.5" fill="#f5b942" font-weight="700">15.7%</text>
+
+  <!-- 7. Home Improvement 12.3% -->
+  <rect x="230" y="292" width="147.6" height="24" rx="3" fill="url(#bLow)"/>
+  <text x="220" y="309" font-size="10.5" fill="#c9d0e8" text-anchor="end">Home Improvement</text>
+  <text x="385" y="309" font-size="10.5" fill="#5dade2" font-weight="700">12.3%</text>
+
+  <!-- 8. Car 8.9% -->
+  <rect x="230" y="326" width="106.8" height="22" rx="3" fill="url(#bGreen)"/>
+  <text x="220" y="341" font-size="10.5" fill="#c9d0e8" text-anchor="end">Car</text>
+  <text x="344" y="341" font-size="10.5" fill="#2ecc71" font-weight="700">8.9%</text>
+
+  <!-- Bank avg marker -->
+  <line x1="329.6" y1="75" x2="329.6" y2="348" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="331" y="83" font-size="9" fill="#f39c12">8.3% avg</text>
+
+  <text x="400" y="392" font-size="11" fill="#6b7694" text-anchor="middle">Default Rate %</text>
+</svg>
